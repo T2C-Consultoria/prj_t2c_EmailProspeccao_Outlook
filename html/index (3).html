@@ -1,0 +1,113 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+  }
+
+  body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    letter-spacing: 1.2px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  b {
+    font-weight: bold;
+    color: #0085ca;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  b {
+    color: #444;
+    font-style: italic;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  p {
+    color: #444;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 24px;
+  }
+
+  header,
+  div,
+  footer {
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 48px;
+    margin: 0 auto;
+  }
+  footer p{
+    font-size: 17px;
+  }
+  img {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  ul{
+    padding-left: 32px;
+    margin-bottom: 48px;
+  }
+  li{
+    margin-bottom: 4px;
+    color: #444;
+    font-size: 14px;
+    line-height: 21px;
+  }
+</style>
+
+
+<header>
+  <!--<h1>Apresentação <b style="color:#0085ca">T2C Consultoria</b></h1>-->
+  <p>{var_strSaudacao}, {var_strNomeDest}</p>
+</header>
+
+
+<div>
+  <p>Sou da T2C Consultoria, uma empresa especializada em robotização. Somos parceiros Diamond da Uipath (líder mundial
+    de RPA).</p>
+  <p>Temos muitos cases de implantação onde a solução viabiliza ganhos rápidos e diretos de produtividade e aumento de confiabilidade nas rotinas diárias.</p>
+  <p>Alguns processos no segmento de {var_strSegmento} são pontos de atuação direta do RPA, por exemplo:</p>
+  <ul>
+  {var_strHtmlSegmento}
+  </ul>
+</div>
+
+
+<footer>
+  <p>Consegue um espaço de 30 minutos na sua agenda para falarmos?</p>
+  <!--<h3 style="color: #444"><b style="color: #0085ca">Abraços!</b></h3>-->
+  <p>Abraços!</p>
+  <p>Patricia Mello</p>
+  <p>T2C Consultoria | 11 93347-7614</p>
+  <!--
+  <img
+    src="https://cdn.mcauto-images-production.sendgrid.net/b3a6d336a28236fc/36cb152b-552a-40b8-ae83-c3008b6d3f40/931x154.png"
+    alt="Patrícia">-->
+</footer>
