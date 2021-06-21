@@ -207,7 +207,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="231,187" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="484,1039" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
                 <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="438,553" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
@@ -344,7 +344,7 @@
                     <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="SystemException IsNot Nothing" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
                   </Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="1085,5594" sap2010:WorkflowViewState.IdRef="State_2">
+                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="254,103" sap2010:WorkflowViewState.IdRef="State_2">
                       <State.Entry>
                         <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="1039,5176" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <sap:WorkflowViewStateService.ViewState>
@@ -456,7 +456,7 @@
                                           <InArgument x:TypeArguments="x:String">[Config ("var_strNomePlanilha").ToString]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Busca os dados de cada planilha, de acordo com o nome dela.&#xD;&#xA;" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="839,1117" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[var_strNomePlanilha.Split(&quot;,&quot;c)]">
+                                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Busca os dados de cada planilha, de acordo com o nome dela.&#xA;" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="839,1117" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[var_strNomePlanilha.Split(&quot;,&quot;c)]">
                                         <ui:ForEach.Body>
                                           <ActivityAction x:TypeArguments="x:Object">
                                             <ActivityAction.Argument>
@@ -481,7 +481,7 @@
                                                   </InArgument>
                                                 </ui:ReadRange.Range>
                                               </ui:ReadRange>
-                                              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Pega os dados da DT das planilhas anteriores e junta em uma única DT (var_dtFinal).&#xD;&#xA;" DataTable="[var_dtSaida]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="410,591" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                                              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Pega os dados da DT das planilhas anteriores e junta em uma única DT (var_dtFinal).&#xA;" DataTable="[var_dtSaida]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="410,591" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                                                 <ui:ForEachRow.Body>
                                                   <ActivityAction x:TypeArguments="sd:DataRow">
                                                     <ActivityAction.Argument>
@@ -550,7 +550,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:ForEach>
-                                      <Sequence sap2010:Annotation.AnnotationText="Cria coluna de Status na DT (var_dtFinal).&#xD;&#xA;" DisplayName="Status" sap:VirtualizedContainerService.HintSize="839,537" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                      <Sequence sap2010:Annotation.AnnotationText="Cria coluna de Status na DT (var_dtFinal).&#xA;" DisplayName="Status" sap:VirtualizedContainerService.HintSize="839,537" sap2010:WorkflowViewState.IdRef="Sequence_39">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -593,7 +593,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <Sequence sap2010:Annotation.AnnotationText="Este wf confere se há filas reamanescente, se não, cria elas e manda ao Orchestrator.&#xD;&#xA;&#xD;&#xA;var_StrCoordenadas - Refere-se a celula da linha para preencher a coluna Status. Será usada no &quot;Finally do Process&quot;." DisplayName="Orchestrator" sap:VirtualizedContainerService.HintSize="959,1138" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                              <Sequence sap2010:Annotation.AnnotationText="Este wf confere se há filas reamanescente, se não, cria elas e manda ao Orchestrator.&#xA;&#xA;var_StrCoordenadas - Refere-se a celula da linha para preencher a coluna Status. Será usada no &quot;Finally do Process&quot;." DisplayName="Orchestrator" sap:VirtualizedContainerService.HintSize="959,1138" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="var_queRemanescente" />
                                   <Variable x:TypeArguments="x:Int32" Name="var_intIndiceLinha" />
