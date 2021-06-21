@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,1757</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1715</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="66">
@@ -78,10 +78,9 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="688,1692" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="688,1650" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -89,7 +88,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="646,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <Sequence sap2010:Annotation.AnnotationText="Este wf processa as filas do Orchestrator.&#xA;&#xA;var_strCaminhoHtml - Caminho do HTML.&#xA;var_strHtmlCompleto - HTML em formato de string." DisplayName="Processar Filas" sap:VirtualizedContainerService.HintSize="646,1433" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="Este wf processa as filas do Orchestrator.&#xA;&#xA;var_strCaminhoHtml - Caminho do HTML.&#xA;var_strHtmlCompleto - HTML em formato de string." DisplayName="Processar Filas" sap:VirtualizedContainerService.HintSize="646,1391" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:DateTime" Default="[DateTime.Now]" Name="var_dataDataSistema" />
         <Variable x:TypeArguments="x:String" Name="var_strSaudacao" />
@@ -121,7 +120,7 @@
         </Assign>
       </Sequence>
       <ui:ReadTextFile Content="[var_strHtmlCompleto]" DisplayName="Read Text File" FileName="[var_strCaminhoHtml]" sap:VirtualizedContainerService.HintSize="604,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-      <Sequence sap2010:Annotation.AnnotationText="Envia email de acordo com o segmento.&#xA;&#xA;Estas variáveis irão ser substituídas no HTML do body:&#xA;&#xA;var_strNomeDest - Nome do destinatário.&#xA;var_strSegmento - Segmento do destinatário.&#xA;var_strTitulo- Título do email.&#xA;&#xA;var_strHtml*Segmento* -  Varíavel com o html específico de cada segmento. Ex: var_strHtmlAgro; var_strHtmlConstrucao; var_strHtmlCoop.&#xA; " DisplayName="Enviar Email" sap:VirtualizedContainerService.HintSize="604,777" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence sap2010:Annotation.AnnotationText="Envia email de acordo com o segmento.&#xA;&#xA;Estas variáveis irão ser substituídas no HTML do body:&#xA;&#xA;var_strNomeDest - Nome do destinatário.&#xA;var_strSegmento - Segmento do destinatário.&#xA;var_strTitulo- Título do email.&#xA;&#xA;var_strHtml*Segmento* -  Varíavel com o html específico de cada segmento. Ex: var_strHtmlAgro; var_strHtmlConstrucao; var_strHtmlCoop.&#xA; " DisplayName="Enviar Email" sap:VirtualizedContainerService.HintSize="604,735" sap2010:WorkflowViewState.IdRef="Sequence_7">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="var_strNomeDest" />
           <Variable x:TypeArguments="x:String" Name="var_strSegmento" />
@@ -164,8 +163,9 @@
             </scg:List>
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
-        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;SEGMENTO&quot;).ToString.ToLower.TrimStart.TrimEnd]" sap:VirtualizedContainerService.HintSize="562,308" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-          <Sequence x:Key="agro business" DisplayName="Agro" sap:VirtualizedContainerService.HintSize="376,341" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Delay Duration="00:01:20" sap:VirtualizedContainerService.HintSize="562,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;SEGMENTO&quot;).ToString.ToLower.TrimStart.TrimEnd]" sap:VirtualizedContainerService.HintSize="562,204" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+          <Sequence x:Key="agro business" DisplayName="Agro" sap:VirtualizedContainerService.HintSize="376,334" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="var_strHtmlAgro" />
             </Sequence.Variables>
@@ -191,7 +191,7 @@
               </ui:SendMail.Files>
             </ui:SendMail>
           </Sequence>
-          <Sequence x:Key="construção" DisplayName="Construção " sap:VirtualizedContainerService.HintSize="376,341" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence x:Key="construção" DisplayName="Construção " sap:VirtualizedContainerService.HintSize="376,334" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="var_strHtmlConstrucao" />
             </Sequence.Variables>
@@ -219,7 +219,7 @@
               </ui:SendMail.Files>
             </ui:SendMail>
           </Sequence>
-          <Sequence x:Key="cooperativa" DisplayName="Cooperativa" sap:VirtualizedContainerService.HintSize="376,341" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence x:Key="cooperativa" DisplayName="Cooperativa" sap:VirtualizedContainerService.HintSize="376,334" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="var_strHtmlCoop" />
             </Sequence.Variables>
@@ -245,7 +245,7 @@
               </ui:SendMail.Files>
             </ui:SendMail>
           </Sequence>
-          <Sequence x:Key="varejo" DisplayName="Varejo" sap:VirtualizedContainerService.HintSize="376,341" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence x:Key="varejo" DisplayName="Varejo" sap:VirtualizedContainerService.HintSize="376,334" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="var_strHtmlVarejo" />
             </Sequence.Variables>
