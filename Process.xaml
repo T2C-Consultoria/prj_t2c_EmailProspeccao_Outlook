@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1314,2474</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,2489</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -81,7 +81,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="688,2409" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="688,2424" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -89,7 +89,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="646,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <Sequence sap2010:Annotation.AnnotationText="Este wf processa as filas do Orchestrator.&#xA;&#xA;var_strCaminhoHtml - Caminho do HTML.&#xA;var_strHtmlCompleto - HTML em formato de string." DisplayName="Processar Filas" sap:VirtualizedContainerService.HintSize="646,2150" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="Este wf processa as filas do Orchestrator.&#xA;&#xA;var_strCaminhoHtml - Caminho do HTML.&#xA;var_strHtmlCompleto - HTML em formato de string." DisplayName="Processar Filas" sap:VirtualizedContainerService.HintSize="646,2165" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:DateTime" Default="[DateTime.Now]" Name="var_dataDataSistema" />
         <Variable x:TypeArguments="x:String" Name="var_strSaudacao" />
@@ -120,7 +120,7 @@
         </Assign>
       </Sequence>
       <ui:ReadTextFile Content="[var_strHtmlCompleto]" DisplayName="Read Text File" FileName="[var_strCaminhoHtml]" sap:VirtualizedContainerService.HintSize="604,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-      <Sequence sap2010:Annotation.AnnotationText="Envia email de acordo com o segmento.&#xA;&#xA;Estas variáveis irão ser substituídas no HTML do body:&#xA;&#xA;var_strNomeDest - Nome do destinatário.&#xA;var_strSegmento - Segmento do destinatário.&#xA;var_strTitulo- Título do email.&#xA;&#xA;var_strHtml*Segmento* -  Varíavel com o html específico de cada segmento. Ex: var_strHtmlAgro; var_strHtmlConstrucao; var_strHtmlCoop.&#xA; " DisplayName="Enviar Email" sap:VirtualizedContainerService.HintSize="604,1618" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence sap2010:Annotation.AnnotationText="Envia email de acordo com o segmento.&#xA;&#xA;Estas variáveis irão ser substituídas no HTML do body:&#xA;&#xA;var_strNomeDest - Nome do destinatário.&#xA;var_strSegmento - Segmento do destinatário.&#xA;var_strTitulo- Título do email.&#xA;&#xA;var_strHtml*Segmento* -  Varíavel com o html específico de cada segmento. Ex: var_strHtmlAgro; var_strHtmlConstrucao; var_strHtmlCoop.&#xA; " DisplayName="Enviar Email" sap:VirtualizedContainerService.HintSize="604,1633" sap2010:WorkflowViewState.IdRef="Sequence_7">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="var_strNomeDest" />
           <Variable x:TypeArguments="x:String" Name="var_strSegmento" />
@@ -164,24 +164,13 @@
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Delay agora&quot;]" />
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="562,234" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-          <ui:CommentOut.Body>
-            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,156" sap2010:WorkflowViewState.IdRef="Sequence_13">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <Delay sap2010:Annotation.AnnotationText="Delay de 1 minuto e 20 segundos." Duration="00:01:20" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="Delay_2">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </Delay>
-            </Sequence>
-          </ui:CommentOut.Body>
-        </ui:CommentOut>
+        <Delay sap2010:Annotation.AnnotationText="Delay de 1 minuto e 20 segundos." Duration="00:01:20" sap:VirtualizedContainerService.HintSize="562,64" sap2010:WorkflowViewState.IdRef="Delay_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Delay>
         <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;SEGMENTO&quot;).ToString.ToLower.TrimStart.TrimEnd]" sap:VirtualizedContainerService.HintSize="562,744" sap2010:WorkflowViewState.IdRef="Switch`1_1">
           <Sequence x:Key="agro business" DisplayName="Agro" sap:VirtualizedContainerService.HintSize="376,472" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
@@ -204,11 +193,11 @@
 "&lt;li&gt;Automatização na Inclusão de Notas Fiscais de Entrada.&lt;/li&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[var_strHtmlCompleto.Replace(&quot;{var_strSaudacao}&quot;,var_strSaudacao).Replace(&quot;{var_strNomeDest}&quot;,var_strNomeDest+&quot;!&quot;).Replace(&quot;{var_strSegmento}&quot;,var_strSegmento.ToLower).Replace(&quot;{var_strHtmlSegmento}&quot;,var_strHtmlAgro)]" DisplayName="Send SMTP Mail Message" Email="patricia.mello@t2cconsultoria.com.br" EnableSSL="True" From="patricia.mello@t2cconsultoria.com.br" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Name="Patricia Mello" Password="Infr@t2c" Port="587" SecureConnection="StartTls" Server="smtp.office365.com" Subject="[var_strTitulo]" To="[in_TransactionItem.SpecificContent(&quot;EMAIL&quot;).ToString.ToLower]">
-              <ui:SendMail.Files>
+            <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="patricia.mello@t2cconsultoria.com.br" Body="[var_strHtmlCompleto.Replace(&quot;{var_strSaudacao}&quot;,var_strSaudacao).Replace(&quot;{var_strNomeDest}&quot;,var_strNomeDest+&quot;!&quot;).Replace(&quot;{var_strSegmento}&quot;,var_strSegmento.ToLower).Replace(&quot;{var_strHtmlSegmento}&quot;,var_strHtmlAgro)]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[var_strTitulo]" To="[in_TransactionItem.SpecificContent(&quot;EMAIL&quot;).ToString.ToLower]">
+              <ui:SendOutlookMail.Files>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-              </ui:SendMail.Files>
-            </ui:SendMail>
+              </ui:SendOutlookMail.Files>
+            </ui:SendOutlookMail>
           </Sequence>
           <Sequence x:Key="construção" DisplayName="Construção " sap:VirtualizedContainerService.HintSize="376,472" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
@@ -233,11 +222,11 @@
 "&lt;li&gt;Automatização no processo de contração.&lt;/li&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[var_strHtmlCompleto.Replace(&quot;{var_strSaudacao}&quot;,var_strSaudacao).Replace(&quot;{var_strNomeDest}&quot;,var_strNomeDest+&quot;!&quot;).Replace(&quot;{var_strSegmento}&quot;,var_strSegmento.ToLower).Replace(&quot;{var_strHtmlSegmento}&quot;,var_strHtmlConstrucao)]" DisplayName="Send SMTP Mail Message" Email="patricia.mello@t2cconsultoria.com.br" EnableSSL="True" From="patricia.mello@t2cconsultoria.com.br" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="True" Name="Patricia Mello" Password="Infr@t2c" Port="587" SecureConnection="StartTls" Server="smtp.office365.com" Subject="[var_strTitulo]" To="[in_TransactionItem.SpecificContent(&quot;EMAIL&quot;).ToString.ToLower]">
-              <ui:SendMail.Files>
+            <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="patricia.mello@t2cconsultoria.com.br" Body="[var_strHtmlCompleto.Replace(&quot;{var_strSaudacao}&quot;,var_strSaudacao).Replace(&quot;{var_strNomeDest}&quot;,var_strNomeDest+&quot;!&quot;).Replace(&quot;{var_strSegmento}&quot;,var_strSegmento.ToLower).Replace(&quot;{var_strHtmlSegmento}&quot;,var_strHtmlConstrucao)]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[var_strTitulo]" To="[in_TransactionItem.SpecificContent(&quot;EMAIL&quot;).ToString.ToLower]">
+              <ui:SendOutlookMail.Files>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-              </ui:SendMail.Files>
-            </ui:SendMail>
+              </ui:SendOutlookMail.Files>
+            </ui:SendOutlookMail>
           </Sequence>
           <Sequence x:Key="cooperativa" DisplayName="Cooperativa" sap:VirtualizedContainerService.HintSize="376,472" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <Sequence.Variables>
@@ -260,11 +249,11 @@
 "&lt;li&gt;Controle de qualidade e notificações dos produtos/serviços realizados.&lt;/li&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[var_strHtmlCompleto.Replace(&quot;{var_strSaudacao}&quot;,var_strSaudacao).Replace(&quot;{var_strNomeDest}&quot;,var_strNomeDest+&quot;!&quot;).Replace(&quot;{var_strSegmento}&quot;,var_strSegmento.ToLower).Replace(&quot;{var_strHtmlSegmento}&quot;,var_strHtmlCoop)]" DisplayName="Send SMTP Mail Message" Email="patricia.mello@t2cconsultoria.com.br" EnableSSL="True" From="patricia.mello@t2cconsultoria.com.br" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="True" Name="Patricia Mello" Password="Infr@t2c" Port="587" SecureConnection="StartTls" Server="smtp.office365.com" Subject="[var_strTitulo]" To="[in_TransactionItem.SpecificContent(&quot;EMAIL&quot;).ToString.ToLower]">
-              <ui:SendMail.Files>
+            <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="patricia.mello@t2cconsultoria.com.br" Body="[var_strHtmlCompleto.Replace(&quot;{var_strSaudacao}&quot;,var_strSaudacao).Replace(&quot;{var_strNomeDest}&quot;,var_strNomeDest+&quot;!&quot;).Replace(&quot;{var_strSegmento}&quot;,var_strSegmento.ToLower).Replace(&quot;{var_strHtmlSegmento}&quot;,var_strHtmlCoop)]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[var_strTitulo]" To="[in_TransactionItem.SpecificContent(&quot;EMAIL&quot;).ToString.ToLower]">
+              <ui:SendOutlookMail.Files>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-              </ui:SendMail.Files>
-            </ui:SendMail>
+              </ui:SendOutlookMail.Files>
+            </ui:SendOutlookMail>
           </Sequence>
           <Sequence x:Key="varejo" DisplayName="Varejo" sap:VirtualizedContainerService.HintSize="376,472" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <Sequence.Variables>
@@ -286,11 +275,11 @@
 "&lt;li&gt;Automatização na Inclusão de Notas Fiscais de Entrada.&lt;/li&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[var_strHtmlCompleto.Replace(&quot;{var_strSaudacao}&quot;,var_strSaudacao).Replace(&quot;{var_strNomeDest}&quot;,var_strNomeDest+&quot;!&quot;).Replace(&quot;{var_strSegmento}&quot;,var_strSegmento.ToLower).Replace(&quot;{var_strHtmlSegmento}&quot;,var_strHtmlVarejo)]" DisplayName="Send SMTP Mail Message" Email="patricia.mello@t2cconsultoria.com.br" EnableSSL="True" From="patricia.mello@t2cconsultoria.com.br" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_4" IsBodyHtml="True" Name="Patricia Mello" Password="Infr@t2c" Port="587" SecureConnection="StartTls" Server="smtp.office365.com" Subject="[var_strTitulo]" To="[in_TransactionItem.SpecificContent(&quot;EMAIL&quot;).ToString.ToLower]">
-              <ui:SendMail.Files>
+            <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="patricia.mello@t2cconsultoria.com.br" Body="[var_strHtmlCompleto.Replace(&quot;{var_strSaudacao}&quot;,var_strSaudacao).Replace(&quot;{var_strNomeDest}&quot;,var_strNomeDest+&quot;!&quot;).Replace(&quot;{var_strSegmento}&quot;,var_strSegmento.ToLower).Replace(&quot;{var_strHtmlSegmento}&quot;,var_strHtmlVarejo)]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_4" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[var_strTitulo]" To="[in_TransactionItem.SpecificContent(&quot;EMAIL&quot;).ToString.ToLower]">
+              <ui:SendOutlookMail.Files>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-              </ui:SendMail.Files>
-            </ui:SendMail>
+              </ui:SendOutlookMail.Files>
+            </ui:SendOutlookMail>
           </Sequence>
           <Sequence x:Key="food" DisplayName="Food" sap:VirtualizedContainerService.HintSize="376,472" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <Sequence.Variables>
@@ -317,11 +306,11 @@
 "&lt;li&gt;Book Executivo para Diretoria&lt;/li&gt;"]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[var_strHtmlCompleto.Replace(&quot;{var_strSaudacao}&quot;,var_strSaudacao).Replace(&quot;{var_strNomeDest}&quot;,var_strNomeDest+&quot;!&quot;).Replace(&quot;{var_strSegmento}&quot;,var_strSegmento.ToLower).Replace(&quot;{var_strHtmlSegmento}&quot;,var_strHtmlFood)]" DisplayName="Send SMTP Mail Message" Email="patricia.mello@t2cconsultoria.com.br" EnableSSL="True" From="patricia.mello@t2cconsultoria.com.br" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_5" IsBodyHtml="True" Name="Patricia Mello" Password="Infr@t2c" Port="587" SecureConnection="StartTls" Server="smtp.office365.com" Subject="[var_strTitulo]" To="[in_TransactionItem.SpecificContent(&quot;EMAIL&quot;).ToString.ToLower]">
-              <ui:SendMail.Files>
+            <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="patricia.mello@t2cconsultoria.com.br" Body="[var_strHtmlCompleto.Replace(&quot;{var_strSaudacao}&quot;,var_strSaudacao).Replace(&quot;{var_strNomeDest}&quot;,var_strNomeDest+&quot;!&quot;).Replace(&quot;{var_strSegmento}&quot;,var_strSegmento.ToLower).Replace(&quot;{var_strHtmlSegmento}&quot;,var_strHtmlFood)]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_5" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[var_strTitulo]" To="[in_TransactionItem.SpecificContent(&quot;EMAIL&quot;).ToString.ToLower]">
+              <ui:SendOutlookMail.Files>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-              </ui:SendMail.Files>
-            </ui:SendMail>
+              </ui:SendOutlookMail.Files>
+            </ui:SendOutlookMail>
           </Sequence>
         </Switch>
       </Sequence>
